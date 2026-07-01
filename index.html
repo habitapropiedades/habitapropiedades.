@@ -45,17 +45,17 @@
 html{scroll-behavior:smooth}
 
 :root{
-  --cream:   #f0ebe0;
-  --cream2:  #e8e0d0;
-  --gold:    #b8975a;
-  --gold-lt: #d4b078;
-  --ink:     #1a2535;
-  --ink2:    #243045;
-  --warm:    #5a5550;
-  --mist:    #ddd8cc;
-  --white:   #fdfaf4;
-  --dark:    #131d2e;
-  --dark2:   #1a2535;
+  --cream:   #141010;
+  --cream2:  #1e1818;
+  --gold:    #c0394a;
+  --gold-lt: #d4536a;
+  --ink:     #f0e6e0;
+  --ink2:    #e0d6d0;
+  --warm:    #c8b8a8;
+  --mist:    #2e2424;
+  --white:   #1e1818;
+  --dark:    #0a0808;
+  --dark2:   #141010;
 }
 
 body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
@@ -65,12 +65,14 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--ink
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;justify-content:center;
   padding:22px 72px;transition:all 0.45s;
+  gap:48px;
 }
 nav.scrolled{
-  background:rgba(240,235,224,0.97);backdrop-filter:blur(14px);
-  padding:14px 72px;box-shadow:0 1px 0 rgba(184,151,90,0.18);
+  background:rgba(20,16,16,0.97);backdrop-filter:blur(14px);
+  padding:14px 72px;box-shadow:0 1px 0 rgba(192,57,74,0.18);
+  justify-content:center;
 }
 .nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
 .nav-logo-wrap{display:flex;flex-direction:column;line-height:1}
@@ -83,18 +85,18 @@ nav.scrolled{
 .nav-links a:hover{color:var(--ink)}
 .nav-links a:hover::after{right:0}
 .nav-cta{padding:10px 28px;border:1.5px solid var(--ink);color:var(--ink);font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:background 0.25s,color 0.25s}
-.nav-cta:hover{background:var(--ink);color:var(--white)}
+.nav-cta:hover{background:var(--ink);color:var(--cream)}
 
 /* ── HERO ── */
 #hero{
   min-height:100vh;position:relative;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:140px 40px 110px;overflow:hidden;
+  text-align:center;padding:100px 72px 70px;overflow:hidden;
 }
 #hero::before{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 70% at 50% 40%,rgba(212,176,120,0.12) 0%,transparent 65%),
-    linear-gradient(170deg,#f5efe2 0%,var(--cream) 50%,#ede5d5 100%);
+  background:radial-gradient(ellipse 80% 70% at 50% 40%,rgba(139,26,43,0.15) 0%,transparent 65%),
+    linear-gradient(170deg,#1a1010 0%,#141010 50%,#1e1414 100%);
 }
 .hero-grid{position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:0.12}
 .hero-grid svg{width:100%;height:100%}
@@ -118,7 +120,7 @@ nav.scrolled{
 h1{
   position:relative;z-index:1;
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,7.5vw,6.5rem);font-weight:300;line-height:1.08;
+  font-size:clamp(2.6rem,6vw,5.5rem);font-weight:300;line-height:1.08;
   color:var(--ink);animation:fadeUp 0.85s 0.26s ease both;margin-bottom:10px;
 }
 h1 em{font-style:italic;color:var(--gold);font-weight:300}
@@ -161,51 +163,51 @@ h1 em{font-style:italic;color:var(--gold);font-weight:300}
 .stat:last-child{border-right:none}
 .stat:hover{background:rgba(255,255,255,0.03)}
 .stat-n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;line-height:1;color:var(--gold);display:block;margin-bottom:6px}
-.stat-l{font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.stat-l{font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
 
 /* ── SHARED ── */
 section{padding:110px 72px}
-.ey{font-size:0.62rem;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.ey{font-size:0.68rem;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px}
 .ey::after{content:'';width:32px;height:1px;background:var(--gold);opacity:0.7}
 h2.title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.8vw,3.2rem);font-weight:300;line-height:1.18;color:var(--ink);margin-bottom:20px}
 h2.title em{font-style:italic;color:var(--gold)}
 
 /* ── QUIENES ── */
 #quienes{background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
-.qs-text p{font-size:0.95rem;font-weight:300;line-height:1.9;color:var(--warm);margin-bottom:18px}
-.qs-text p strong{font-weight:600;color:var(--ink)}
+.qs-text p{font-size:1rem;font-weight:400;line-height:1.9;color:var(--ink);margin-bottom:18px}
+.qs-text p strong{font-weight:700;color:var(--ink)}
 .values{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
 .val{padding:20px;border:1px solid var(--mist);background:var(--cream);border-radius:2px;transition:border-color 0.2s,transform 0.2s}
 .val:hover{border-color:var(--gold);transform:translateY(-3px)}
 .val-i{font-size:1.3rem;margin-bottom:8px}
-.val-n{font-size:0.78rem;font-weight:700;letter-spacing:0.06em;color:var(--ink);margin-bottom:3px}
-.val-d{font-size:0.75rem;color:var(--warm);line-height:1.55}
+.val-n{font-size:0.85rem;font-weight:700;letter-spacing:0.06em;color:var(--ink);margin-bottom:5px}
+.val-d{font-size:0.82rem;color:var(--ink);line-height:1.65;font-weight:400}
 .qs-visual{position:relative;height:500px}
 .qs-main{position:absolute;right:0;top:0;width:75%;height:360px;border-radius:3px;background:linear-gradient(135deg,var(--cream2) 0%,var(--mist) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 24px 64px rgba(28,28,26,0.1)}
 .qs-main-inner{font-size:6rem;opacity:0.18}
-.qs-stat{position:absolute;left:0;bottom:0;width:55%;border-radius:2px;background:var(--ink);padding:26px 28px;box-shadow:0 16px 40px rgba(28,28,26,0.2);border-left:3px solid var(--gold)}
-.qs-stat .sl{font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px}
+.qs-stat{position:absolute;left:0;bottom:0;width:55%;border-radius:2px;background:var(--white);padding:26px 28px;box-shadow:0 16px 40px rgba(0,0,0,0.4);border-left:3px solid var(--gold);border:1px solid var(--mist);border-left:3px solid var(--gold)}
+.qs-stat .sl{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm);margin-bottom:6px}
 .qs-stat .sv{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:3px}
-.qs-stat .ss{font-size:0.72rem;color:rgba(255,255,255,0.4)}
-.qs-badge{position:absolute;top:20px;left:0;background:var(--ink);color:var(--gold);padding:9px 18px;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px;border-left:2px solid var(--gold)}
+.qs-stat .ss{font-size:0.8rem;color:var(--warm)}
+.qs-badge{position:absolute;top:20px;left:0;background:var(--ink);color:var(--gold);padding:9px 18px;font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px;border-left:2px solid var(--gold)}
 
 /* ── SERVICIOS ── */
 #servicios{background:var(--cream)}
 .sv-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:end;margin-bottom:56px}
-.sv-intro p{font-family:'Montserrat',sans-serif;font-size:0.97rem;font-weight:700;line-height:1.75;color:var(--warm)}
+.sv-intro p{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:600;line-height:1.75;color:var(--ink)}
 .sv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mist);border:1px solid var(--mist);border-radius:3px;overflow:hidden}
 .sv-card{background:var(--white);padding:44px 36px;position:relative;overflow:hidden;transition:background 0.35s}
 .sv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
-.sv-card:hover{background:var(--ink)}
+.sv-card:hover{background:#0a0808}
 .sv-card:hover::after{transform:scaleX(1)}
-.sv-card:hover .sv-n{color:rgba(184,151,90,0.15)}
-.sv-card:hover h3{color:var(--white)}
-.sv-card:hover p{color:rgba(253,250,244,0.5)}
-.sv-card:hover .sv-ico{background:rgba(184,151,90,0.15)}
+.sv-card:hover .sv-n{color:rgba(192,57,74,0.2)}
+.sv-card:hover h3{color:var(--ink)}
+.sv-card:hover p{color:rgba(240,230,224,0.75)}
+.sv-card:hover .sv-ico{background:rgba(192,57,74,0.15)}
 .sv-n{position:absolute;top:26px;right:26px;font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--mist);line-height:1;transition:color 0.35s}
 .sv-ico{width:48px;height:48px;border-radius:2px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px;transition:background 0.35s}
 .sv-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:12px;transition:color 0.35s}
-.sv-card p{font-size:0.92rem;font-weight:300;line-height:1.8;color:var(--warm);transition:color 0.35s}
+.sv-card p{font-size:0.97rem;font-weight:400;line-height:1.85;color:var(--ink);transition:color 0.35s}
 
 /* ── PROPIEDADES ── */
 #propiedades{background:var(--white)}
@@ -216,13 +218,13 @@ h2.title em{font-style:italic;color:var(--gold)}
 .prf.active,.prf:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
 .pr-sidebar-wrap{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
 .pr-sidebar{position:sticky;top:90px;background:var(--white);border:1px solid var(--mist);border-radius:4px;padding:20px}
-.pr-sidebar-title{font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--mist)}
+.pr-sidebar-title{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--mist)}
 .pr-filter-group{margin-bottom:14px}
-.pr-filter-label{font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--warm);margin-bottom:5px;display:block}
-.pr-filter-input{width:100%;padding:7px 10px;border:1px solid var(--mist);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:0.78rem;color:var(--ink);background:#fff;outline:none;transition:border-color 0.2s}
+.pr-filter-label{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:5px;display:block}
+.pr-filter-input{width:100%;padding:7px 10px;border:1px solid var(--mist);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:0.82rem;color:var(--ink);background:var(--cream2);outline:none;transition:border-color 0.2s}
 .pr-filter-input:focus{border-color:var(--gold)}
 .pr-filter-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.pr-filter-clear{width:100%;margin-top:6px;padding:8px;background:none;border:1px solid var(--mist);border-radius:2px;font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm);cursor:pointer;transition:all 0.2s;font-family:'Montserrat',sans-serif}
+.pr-filter-clear{width:100%;margin-top:6px;padding:8px;background:none;border:1px solid var(--mist);border-radius:2px;font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:all 0.2s;font-family:'Montserrat',sans-serif}
 .pr-filter-clear:hover{border-color:var(--gold);color:var(--gold)}
 .pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:900px){.pr-sidebar-wrap{grid-template-columns:1fr}.pr-sidebar{position:static}}
@@ -235,20 +237,20 @@ h2.title em{font-style:italic;color:var(--gold)}
 .pimg4{background:linear-gradient(135deg,#ddd0e8,#c8b8d8)}
 .pimg5{background:linear-gradient(135deg,#e8dcc8,#d0c0a0)}
 .pimg6{background:linear-gradient(135deg,#d0e4d8,#b4ccbc)}
-.pr-badge{position:absolute;top:12px;left:12px;padding:4px 12px;font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:1px}
-.pb-v{background:var(--ink);color:var(--white)}
-.pb-d{background:var(--gold);color:var(--ink)}
-.pb-o{background:#4caf50;color:#fff}
+.pr-badge{position:absolute;top:12px;left:12px;padding:4px 12px;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:1px}
+.pb-v{background:var(--ink);color:var(--cream)}
+.pb-d{background:var(--gold);color:var(--cream)}
+.pb-o{background:#4caf50;color:var(--cream)}
 .pr-body{padding:22px}
-.pr-tipo{font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
-.pr-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--ink);margin-bottom:5px}
-.pr-zona{font-size:0.8rem;color:var(--warm);margin-bottom:12px}
+.pr-tipo{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.pr-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:5px}
+.pr-zona{font-size:0.85rem;color:var(--ink);margin-bottom:12px;font-weight:500}
 .pr-feats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-.pr-f{font-size:0.75rem;color:var(--warm)}
+.pr-f{font-size:0.82rem;color:var(--ink);font-weight:500}
 .pr-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--mist)}
 .pr-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--ink)}
-.pr-price span{font-family:'Montserrat',sans-serif;font-size:0.68rem;color:var(--warm)}
-.pr-cta{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;color:var(--gold);text-decoration:none;transition:letter-spacing 0.2s}
+.pr-price span{font-family:'Montserrat',sans-serif;font-size:0.72rem;color:var(--ink)}
+.pr-cta{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;color:var(--gold);text-decoration:none;transition:letter-spacing 0.2s}
 .pr-card:hover .pr-cta{letter-spacing:0.14em}
 .pr-img-photo{background-size:cover;background-position:center;background-repeat:no-repeat}
 .pr-slider{position:relative;height:195px;overflow:hidden;border-radius:0}
@@ -290,7 +292,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .pd-desc{font-size:0.88rem;line-height:1.75;color:var(--warm);margin-bottom:28px;padding:16px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold)}
 .pd-form-title{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
 .pd-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-.pd-input{padding:11px 14px;border:1px solid var(--mist);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:0.82rem;color:var(--ink);background:#fff;outline:none;transition:border-color 0.2s;width:100%}
+.pd-input{padding:11px 14px;border:1px solid var(--mist);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:0.82rem;color:var(--ink);background:var(--cream2);outline:none;transition:border-color 0.2s;width:100%}
 .pd-input:focus{border-color:var(--gold)}
 .pd-textarea{resize:vertical;min-height:80px}
 .pd-btn-contact{width:100%;padding:13px;background:var(--ink);color:#fff;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-bottom:8px}
@@ -330,7 +332,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .testi-head{text-align:center;margin-bottom:56px}
 .testi-head .ey{justify-content:center}
 .testi-head .ey::before{content:'';width:32px;height:1px;background:var(--gold);opacity:0.7}
-.testi-head h2{color:var(--white)}
+.testi-head h2{color:#f0e6e0}
 .testi-head h2 em{color:var(--gold)}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .testi-cta{text-align:center;margin-top:44px}
@@ -340,17 +342,17 @@ h2.title em{font-style:italic;color:var(--gold)}
 .testi{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:2px;padding:32px;transition:border-color 0.3s,background 0.3s}
 .testi:hover{background:rgba(255,255,255,0.06);border-color:rgba(184,151,90,0.25)}
 .testi-stars{color:var(--gold);font-size:0.85rem;letter-spacing:3px;margin-bottom:16px}
-.testi-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(253,250,244,0.7);margin-bottom:24px}
+.testi-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(253,250,244,0.9);margin-bottom:24px}
 .testi-author{display:flex;align-items:center;gap:12px}
 .testi-av{width:40px;height:40px;border-radius:50%;background:rgba(184,151,90,0.15);border:1px solid rgba(184,151,90,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem}
-.testi-name{font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.85)}
-.testi-op{font-size:0.7rem;color:rgba(255,255,255,0.3)}
+.testi-name{font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.95)}
+.testi-op{font-size:0.75rem;color:rgba(255,255,255,0.55)}
 
 /* ── FAQ ── */
 #faq{background:var(--white)}
 .faq-wrap{display:grid;grid-template-columns:290px 1fr;gap:80px;align-items:start}
 .faq-side{position:sticky;top:110px}
-.faq-side>p{font-size:0.9rem;font-weight:300;line-height:1.85;color:var(--warm);margin-bottom:28px}
+.faq-side>p{font-size:0.95rem;font-weight:400;line-height:1.85;color:var(--ink);margin-bottom:28px}
 .cat-list{list-style:none;margin-bottom:32px}
 .cat-list li{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--mist);font-size:0.75rem;font-weight:600;letter-spacing:0.06em;color:var(--warm);cursor:pointer;transition:color 0.2s,padding-left 0.2s}
 .cat-list li:hover,.cat-list li.active{color:var(--gold);padding-left:4px}
@@ -358,7 +360,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .cat-list li.active .cbadge{background:rgba(184,151,90,0.15);color:var(--gold)}
 .fsearch-wrap{position:relative;margin-bottom:20px}
 .fsearch-wrap::before{content:'⌕';position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--warm);font-size:1rem;pointer-events:none}
-.fsearch{width:100%;padding:11px 14px 11px 38px;border:1.5px solid var(--mist);border-radius:1px;background:var(--cream);font-family:'Montserrat',sans-serif;font-size:0.82rem;color:var(--ink);outline:none;transition:border-color 0.2s}
+.fsearch{width:100%;padding:11px 14px 11px 38px;border:1.5px solid var(--mist);border-radius:1px;background:var(--cream2);font-family:'Montserrat',sans-serif;font-size:0.82rem;color:var(--ink);outline:none;transition:border-color 0.2s}
 .fsearch:focus{border-color:var(--gold)}
 .faq-list{display:flex;flex-direction:column}
 .fi{border-bottom:1px solid var(--mist)}
@@ -370,7 +372,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .fi.open .ftog{background:var(--gold);border-color:var(--gold);color:#fff;transform:rotate(45deg)}
 .fa{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(.4,0,.2,1)}
 .fi.open .fa{max-height:300px}
-.fa-inner{padding:0 0 18px;font-size:0.86rem;font-weight:300;line-height:1.85;color:var(--warm)}
+.fa-inner{padding:0 0 18px;font-size:0.92rem;font-weight:400;line-height:1.85;color:var(--ink)}
 .fa-inner .tag{display:inline;background:rgba(184,151,90,0.1);color:var(--gold);font-weight:600;padding:1px 5px;border-radius:1px}
 .no-res{text-align:center;padding:48px;color:var(--warm);font-size:0.87rem;display:none}
 .fcount{font-size:0.72rem;color:var(--warm);margin-bottom:14px}
@@ -381,14 +383,14 @@ h2.title em{font-style:italic;color:var(--gold)}
 #contacto::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(184,151,90,0.1) 0%,transparent 65%)}
 .cta-tag{font-size:0.62rem;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:14px}
 .cta-tag::before,.cta-tag::after{content:'';width:40px;height:1px;background:var(--gold);opacity:0.5}
-#contacto h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4.2rem);font-weight:300;color:var(--white);line-height:1.12;margin-bottom:18px}
+#contacto h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4.2rem);font-weight:300;color:#f0e6e0;line-height:1.12;margin-bottom:18px}
 #contacto h2 em{font-style:italic;color:var(--gold)}
 #contacto>p{font-size:1rem;font-weight:300;color:rgba(253,250,244,0.45);max-width:440px;margin:0 auto 48px;line-height:1.8}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:64px}
-.btn-gold{padding:14px 38px;background:var(--gold);color:var(--ink);font-family:'Montserrat',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border:none;border-radius:1px;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.25s,transform 0.15s}
+.btn-gold{padding:14px 38px;background:var(--gold);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border:none;border-radius:1px;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.25s,transform 0.15s}
 .btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px)}
-.btn-ghost{padding:13px 38px;background:transparent;color:rgba(253,250,244,0.65);font-family:'Montserrat',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border:1.5px solid rgba(253,250,244,0.18);border-radius:1px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.25s,color 0.25s}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-ghost{padding:13px 38px;background:#8B7355;color:var(--cream);font-family:'Montserrat',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border:1.5px solid #8B7355;border-radius:1px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.25s,color 0.25s,background 0.25s}
+.btn-ghost:hover{border-color:var(--gold);background:var(--gold);color:var(--cream)}
 
 .contact-info{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07);padding-top:52px}
 .ci{text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,0.07)}
@@ -403,12 +405,12 @@ h2.title em{font-style:italic;color:var(--gold)}
 .redes-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:0 auto}
 .rb{display:flex;align-items:center;gap:9px;padding:11px 24px;border-radius:1px;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:transform 0.2s,opacity 0.2s}
 .rb:hover{transform:translateY(-2px);opacity:0.9}
-.rb-ig{background:var(--gold);color:var(--ink)}
-.rb-tt{background:var(--gold);color:var(--ink)}
-.rb-em{background:var(--gold);color:var(--ink)}
+.rb-ig{background:var(--gold);color:var(--cream)}
+.rb-tt{background:var(--gold);color:var(--cream)}
+.rb-em{background:var(--gold);color:var(--cream)}
 
 /* ── FOOTER ── */
-footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+footer{background:#060404;padding:36px 72px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
 .f-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .f-name{font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;letter-spacing:-0.01em;color:rgba(26,37,53,0.5);line-height:1}
 .f-name em{font-style:normal;color:#4ab8c8}
@@ -454,21 +456,7 @@ footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;just
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 44 L50 10 L88 44" stroke="#D42B2B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <rect x="33" y="29" width="14" height="14" rx="3" fill="#4AABDB"/>
-      <rect x="53" y="29" width="14" height="14" rx="3" fill="#4AABDB"/>
-      <rect x="33" y="47" width="14" height="14" rx="3" fill="#4AABDB"/>
-      <rect x="53" y="47" width="14" height="14" rx="3" fill="#F5C518"/>
-      <path d="M50 95 C50 95 15 85 11 58 C11 58 28 55 43 69 C43 69 47 78 50 95Z" fill="#4CAF50"/>
-      <path d="M50 95 C50 95 85 85 89 58 C89 58 72 55 57 69 C57 69 53 78 50 95Z" fill="#4CAF50"/>
-      <path d="M50 93 C45 80 34 68 18 63" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.45"/>
-      <path d="M50 93 C55 80 66 68 82 63" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.45"/>
-    </svg>
-    <div class="nav-logo-wrap">
-      <span class="nav-logo-name">Häbi<em>ta</em></span>
-      <span class="nav-logo-sub">Propiedades</span>
-    </div>
+    <img src="./logo.png" alt="Sandra Arano Negocios Inmobiliarios" style="height:100px;width:auto;object-fit:contain"/>
   </a>
   <ul class="nav-links">
     <li><a href="#quienes">Nosotros</a></li>
@@ -476,7 +464,6 @@ footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;just
     <li><a href="#propiedades">Propiedades</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
     <li><a href="#faq">Preguntas</a></li>
-    <li><a href="#staff">Staff de apoyo</a></li>
   </ul>
   <a href="#contacto" class="nav-cta">Contactar</a>
 </nav>
@@ -493,7 +480,7 @@ footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;just
     </svg>
   </div>
 
-  <h1>Tu hogar,<br/><em>nuestra</em> misión</h1>
+  <h1>Tu <span style="color:#f0e6e0;font-style:normal">patrimonio</span>,<br/><em>nuestra</em> misión</h1>
   <p class="hero-sub">Conectamos personas con sus proyectos.</p>
   <div class="hero-btns">
     <a href="#contacto" class="btn-solid">Quiero vender mi propiedad</a>
@@ -516,13 +503,13 @@ footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;just
   <div class="qs-text reveal">
     <div class="ey">Quiénes somos</div>
     <h2 class="title"><em>Respaldo profesional</em> para la protección de su patrimonio inmobiliario.</h2>
-    <p>Somos <strong>Habita Propiedades</strong>, una empresa de base familiar con vocación de servicio. Operamos en toda la Ciudad de Buenos Aires.</p>
-    <p>Unimos el trato directo de una empresa familiar con el rigor de una gestión inmobiliaria profesional. Brindamos asesoramiento integral junto a nuestro equipo de profesionales asociados, abordando cada propósito de compra o venta con <strong>empatía</strong> y el compromiso de garantizar una operación segura para su patrimonio.</p>
+    <p>En <strong>Häbita Propiedades</strong> protegemos y potenciamos el valor de su patrimonio e inversiones inmobiliarias a través de una gestión eficiente y profesional, centrada en los objetivos de cada cliente.</p>
+    <p>Integramos un enfoque personalizado con el rigor de una gestión inmobiliaria profesional. A través de nuestro equipo brindamos asesoramiento legal, notarial e impositivo, acompañando cada instancia de la operación para asegurar decisiones certeras, orientadas al logro de los objetivos planteados, dentro de procesos seguros y confiables.</p>
     <div class="values">
-      <div class="val"><div class="val-i">🎯</div><div class="val-n">Compromiso</div><div class="val-d">Nos ocupamos de cada detalle de la operación</div></div>
-      <div class="val"><div class="val-i">🤝</div><div class="val-n">Confianza</div><div class="val-d">Transparencia total en cada etapa</div></div>
-      <div class="val"><div class="val-i">⚡</div><div class="val-n">Rapidez</div><div class="val-d">Respuestas ágiles, sin demoras</div></div>
-      <div class="val"><div class="val-i">👨‍👩‍👧</div><div class="val-n">Cercanía</div><div class="val-d">Trato directo, sin burocracia</div></div>
+      <div class="val"><div class="val-i">🎯</div><div class="val-n">Compromiso</div><div class="val-d">Asumimos cada proyecto con responsabilidad, profesionalismo y dedicación, en función de los objetivos de cada cliente.</div></div>
+      <div class="val"><div class="val-i">🤝</div><div class="val-n">Confianza</div><div class="val-d">Trabajamos con transparencia en cada instancia del proceso.</div></div>
+      <div class="val"><div class="val-i">⚡</div><div class="val-n">Rapidez</div><div class="val-d">Gestionamos cada operación de forma ágil y ordenada.</div></div>
+      <div class="val"><div class="val-i">👨‍👩‍👧</div><div class="val-n">Cercanía</div><div class="val-d">Brindamos una atención directa y personalizada en cada etapa.</div></div>
     </div>
   </div>
   <div class="qs-visual reveal d1">
@@ -549,19 +536,19 @@ footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;just
       <div class="sv-n">01</div>
       <div class="sv-ico">🏢</div>
       <h3>Venta de propiedades</h3>
-      <p>Gestionamos cada etapa del proceso para asegurar la <strong>efectividad de la gestión</strong>: desde la tasación técnica y la producción fotográfica, hasta la estrategia de venta y difusión. Brindamos reportes periódicos, coordinamos visitas con interesados calificados y lideramos la gestión notarial e impositiva para garantizar la seguridad jurídica de su patrimonio.</p>
+      <p>Gestionamos cada etapa del proceso para asegurar la efectividad de la operación: desde la tasación técnica y la producción fotográfica, hasta la definición de la estrategia comercial y su difusión. Brindamos reportes periódicos, coordinamos visitas con interesados calificados y acompañamos la gestión notarial e impositiva, garantizando seguridad jurídica y resguardando el valor de su patrimonio.</p>
     </div>
     <div class="sv-card reveal d2">
       <div class="sv-n">02</div>
       <div class="sv-ico">🔑</div>
       <h3>Compra de propiedades</h3>
-      <p>Desarrollamos búsquedas específicas basadas en el <strong>entendimiento cercano</strong> de sus necesidades. Analizamos cada requerimiento para identificar propiedades que cumplan con su perfil de búsqueda, coordinando visitas seleccionadas y liderando la gestión notarial e impositiva para asegurar la concreción de su inversión con total seguridad jurídica. <a href="#contacto" style="color:var(--gold);font-weight:600;text-decoration:none;display:block;margin-top:12px;">Contanos qué necesitás →</a></p>
+      <p>Desarrollamos búsquedas específicas a partir de una comprensión precisa de sus necesidades. Analizamos cada requerimiento para identificar propiedades acordes a su perfil, coordinando visitas seleccionadas y acompañando todo el proceso. Brindamos asesoramiento legal, notarial e impositivo, asegurando decisiones fundadas y la concreción de su inversión dentro de un marco de seguridad jurídica. <a href="#contacto" style="color:var(--gold);font-weight:600;text-decoration:none;display:block;margin-top:12px;">Contanos qué necesitás →</a></p>
     </div>
     <div class="sv-card reveal d3">
       <div class="sv-n">03</div>
       <div class="sv-ico">📋</div>
       <h3>Asesoramiento integral</h3>
-      <p>Desde la primera consulta hasta la firma final, te orientamos en los aspectos legales, la documentación y la coordinación con escribanos. Sin burocracia y con claridad en cada paso.</p>
+      <p>Desde la primera consulta hasta la firma, brindamos orientación en los aspectos legales, la documentación y la coordinación con escribanos. Trabajamos con claridad en cada instancia del proceso, asegurando una gestión ordenada y sin intermediaciones innecesarias.</p>
     </div>
   </div>
 </section>
@@ -701,16 +688,7 @@ footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;just
 <!-- FOOTER -->
 <footer>
   <a href="#hero" class="f-logo">
-    <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
-      <path d="M12 44 L50 10 L88 44" stroke="#D42B2B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <rect x="33" y="29" width="14" height="14" rx="3" fill="#4AABDB"/>
-      <rect x="53" y="29" width="14" height="14" rx="3" fill="#4AABDB"/>
-      <rect x="33" y="47" width="14" height="14" rx="3" fill="#4AABDB"/>
-      <rect x="53" y="47" width="14" height="14" rx="3" fill="#F5C518"/>
-      <path d="M50 95 C50 95 15 85 11 58 C11 58 28 55 43 69 C43 69 47 78 50 95Z" fill="#4CAF50"/>
-      <path d="M50 95 C50 95 85 85 89 58 C89 58 72 55 57 69 C57 69 53 78 50 95Z" fill="#4CAF50"/>
-    </svg>
-    <div style="display:flex;flex-direction:column;line-height:1"><span class="f-name">Häbi<em>ta</em></span><span style="font-size:0.48rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-top:3px">Propiedades</span></div>
+    <img src="./logo.png" alt="Sandra Arano Negocios Inmobiliarios" style="height:64px;width:auto;object-fit:contain;filter:brightness(0) invert(1)"/>
   </a>
   <ul class="f-links">
     <li><a href="#quienes">Nosotros</a></li>
@@ -793,71 +771,29 @@ const DELAY_CLASS = ['d1','d2','d3'];
 let allProps = [];
 let currentFilter = 'all';
 
-// ── GOOGLE DRIVE FOLDER PHOTOS ──
-// Cache para no pedir la misma carpeta dos veces
-const driveCache = {};
-
+// ── GOOGLE DRIVE PHOTOS ──
+// Convierte un ID de archivo de Drive en URL de imagen directa
+// Los IDs se ponen en el Sheet separados por coma: ID1,ID2,ID3
 function getDrivePhotoUrl(fileId) {
-  return `https://lh3.googleusercontent.com/d/${fileId}`;
+  fileId = fileId.trim();
+  // Si ya es una URL completa, la devolvemos tal cual
+  if (fileId.startsWith('http')) return fileId;
+  // Si es un ID de Drive, construimos la URL de thumbnail
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1200`;
 }
 
-async function getFolderPhotos(folderId) {
-  if (!folderId) return [];
-  folderId = folderId.trim();
-  // Si ya lo tenemos en cache, devolvemos directo
-  if (driveCache[folderId] !== undefined) return driveCache[folderId];
-  // Intentamos obtener la lista de archivos de la carpeta via RSS/feed público
-  try {
-    const url = `https://drive.google.com/drive/folders/${folderId}`;
-    // Usamos el endpoint de exportación de Drive que devuelve JSON con los archivos
-    const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/'&fields=files(id,name)&orderBy=name&key=AIzaSyD-placeholder`;
-    // Como no tenemos API key, usamos el método alternativo: scraping del feed público
-    // Google Drive folders públicas exponen sus archivos en un endpoint especial
-    const res = await fetch(`https://drive.google.com/drive/folders/${folderId}?usp=sharing`, {
-      headers: { 'Accept': 'text/html' }
-    });
-    const html = await res.text();
-    // Extraer IDs de archivos del HTML de Drive
-    const ids = [...html.matchAll(/\/file\/d\/([\w-]{20,})\//g)].map(m => m[1]);
-    // Eliminar duplicados manteniendo orden
-    const unique = [...new Set(ids)];
-    const photos = unique.map(id => getDrivePhotoUrl(id));
-    driveCache[folderId] = photos;
-    return photos;
-  } catch(e) {
-    driveCache[folderId] = [];
-    return [];
-  }
-}
-
-// Obtener fotos de una propiedad (puede ser ID de carpeta o URLs directas separadas por coma)
-async function getPropPhotos(fotoField) {
+// Obtener fotos de una propiedad a partir del campo "foto" del Sheet
+// Acepta: IDs de Drive separados por coma, o URLs completas separadas por coma
+function getPropPhotos(fotoField) {
   if (!fotoField) return [];
-  const val = fotoField.trim();
-  // Si contiene una coma o empieza con http → son URLs directas (sistema anterior)
-  if (val.startsWith('http') || val.includes(',')) {
-    return val.split(',').map(f => f.trim()).filter(f => f.startsWith('http'));
-  }
-  // Si parece un ID de Drive (solo letras, números, guiones, ~28-40 chars) → es carpeta
-  if (/^[\w-]{15,}$/.test(val)) {
-    return await getFolderPhotos(val);
-  }
-  return [];
+  return fotoField.split(',')
+    .map(f => f.trim())
+    .filter(f => f.length > 0)
+    .map(f => getDrivePhotoUrl(f));
 }
 
-// Versión sincrónica con URL directa (para renderizado inicial rápido)
-function getDriveUrlDirect(fotoField) {
-  if (!fotoField) return [];
-  const val = fotoField.trim();
-  if (val.startsWith('http') || val.includes(',')) {
-    return val.split(',').map(f => f.trim()).filter(f => f.startsWith('http'));
-  }
-  // Si es ID de carpeta y ya está en cache, devolver fotos
-  if (/^[\w-]{15,}$/.test(val) && driveCache[val]) {
-    return driveCache[val];
-  }
-  return [];
-}
+// Alias sincrónico (mismo comportamiento, ya no hay async)
+const getDriveUrlDirect = getPropPhotos;
 
 function buildCard(p, idx, globalIdx) {
   const dc = DELAY_CLASS[idx % 3];
@@ -876,9 +812,6 @@ function buildCard(p, idx, globalIdx) {
     imgSection = `<div class="pr-slider" data-idx="0"><div class="pr-slider-inner">${slides}</div><button class="pr-slider-btn pr-slider-prev">&#8249;</button><button class="pr-slider-btn pr-slider-next">&#8250;</button><div class="pr-slider-dots">${dots}</div>${badge}</div>`;
   } else if (fotos.length === 1) {
     imgSection = `<div class="pr-img pr-img-photo" style="background-image:url('${fotos[0]}');cursor:zoom-in" onclick="window.openLightbox(['${fotos[0]}'],0)">${badge}</div>`;
-  } else if (/^[\w-]{15,}$/.test((p.foto||'').trim())) {
-    // Es un ID de carpeta pero aún no cargó → placeholder con spinner
-    imgSection = `<div class="pr-img" style="background:${gradient}" id="card-img-${globalIdx}">${emoji}<span style="position:absolute;bottom:8px;right:8px;font-size:0.6rem;color:rgba(0,0,0,0.4)">⏳</span>${badge}</div>`;
   } else {
     imgSection = `<div class="pr-img" style="background:${gradient}">${emoji}${badge}</div>`;
   }
@@ -947,12 +880,12 @@ function renderProps() {
     thumbsEl.querySelectorAll('.pd-thumb').forEach((t,i) => t.classList.toggle('active', i===idx));
   }
 
-  window.openDetail = async function(propIdx) {
+  window.openDetail = function(propIdx) {
     const p = allProps[propIdx];
     if (!p) return;
 
-    // Photos — soporta carpeta de Drive o URLs directas
-    photoUrls = await getPropPhotos(p.foto);
+    // Photos — acepta IDs de Drive o URLs directas separadas por coma
+    photoUrls = getPropPhotos(p.foto);
     if (photoUrls.length) {
       mainPhoto.style.display = '';
       mainPhoto.style.backgroundImage = `url('${photoUrls[0]}')`;
@@ -1156,9 +1089,7 @@ async function loadProps() {
     if (!res.ok) throw new Error('No se pudo cargar');
     const text = await res.text();
     const rows = parseCSV(text);
-    // Row 0: title, Row 1: description, Row 2: empty, Row 3: display headers, Row 4: key names, Row 5+: data
     const HEADER_ROWS = 5;
-    // Column order: titulo, tipo, categoria, zona, ambientes, banos, metros, precio, badge, foto, activa
     const COLS = ['direccion','titulo','tipo','zona','ambientes','banos','metros','precio','badge','foto','descripcion','activa'];
     allProps = rows.slice(HEADER_ROWS)
       .filter(r => r.length >= 2 && (r[0] || r[1] || r[2]))
@@ -1167,18 +1098,6 @@ async function loadProps() {
         COLS.forEach((k, i) => { p[k] = r[i] || ''; });
         return p;
       });
-
-    // Pre-cargar fotos de carpetas de Drive antes de renderizar
-    const folderIds = [...new Set(
-      allProps
-        .map(p => (p.foto||'').trim())
-        .filter(f => /^[\w-]{15,}$/.test(f) && !f.startsWith('http'))
-    )];
-    if (folderIds.length > 0) {
-      grid.innerHTML = '<div class="pr-loading">Cargando fotos de propiedades...</div>';
-      await Promise.all(folderIds.map(id => getFolderPhotos(id)));
-    }
-
     renderProps();
   } catch(e) {
     grid.innerHTML = '<div class="pr-empty">⚠️ La planilla aún no está publicada. Seguí los pasos de la guía para publicarla como CSV.</div>';
