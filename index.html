@@ -83,6 +83,8 @@ nav.scrolled{
   padding:14px 72px;box-shadow:0 1px 0 rgba(184,151,90,0.18);
 }
 .nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-logo img{height:118px;width:auto;object-fit:contain;transition:height 0.35s}
+nav.scrolled .nav-logo img{height:72px}
 .nav-links{display:flex;gap:34px;list-style:none}
 .nav-links a{font-size:0.85rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--warm);text-decoration:none;position:relative;padding-bottom:3px;transition:color 0.2s}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:100%;height:1px;background:var(--gold);transition:right 0.35s}
@@ -95,7 +97,7 @@ nav.scrolled{
 #hero{
   min-height:100vh;position:relative;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:140px 40px 110px;overflow:hidden;
+  text-align:center;padding:190px 40px 110px;overflow:hidden;
 }
 #hero::before{
   content:'';position:absolute;inset:0;
@@ -317,7 +319,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .pd-badge-row .pr-badge{position:static}
 .pd-tipo-label{font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
 .pd-title{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--ink);line-height:1.15;margin-bottom:6px}
-.pd-zona{font-size:1.05rem;color:var(--warm);margin-bottom:24px;font-weight:400;font-family:'DM Sans',sans-serif;font-style:italic}
+.pd-zona{font-size:1.05rem;color:var(--warm);margin-bottom:24px;font-weight:700;font-family:'DM Sans',sans-serif;font-style:italic}
 .pd-price{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;color:var(--ink);margin-bottom:4px}
 .pd-expensas{font-size:0.85rem;color:var(--warm);margin-bottom:20px}
 .pd-specs{display:flex;flex-wrap:wrap;gap:0;margin-bottom:24px;border:1px solid var(--mist);border-radius:4px;overflow:hidden}
@@ -515,7 +517,7 @@ footer{background:#0f0e0c;padding:36px 72px;display:flex;align-items:center;just
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-    <img src="./logo.png" alt="Sandra Arano Negocios Inmobiliarios" style="height:80px;width:auto;object-fit:contain"/>
+    <img src="./logo.png" alt="Sandra Arano Negocios Inmobiliarios"/>
   </a>
   <ul class="nav-links">
     <li><a href="#quienes">Nosotros</a></li>
