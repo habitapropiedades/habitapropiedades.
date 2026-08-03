@@ -392,7 +392,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .testi-track-wrap::before,.testi-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
 .testi-track-wrap::before{left:0;background:linear-gradient(to right,var(--dark),transparent)}
 .testi-track-wrap::after{right:0;background:linear-gradient(to left,var(--dark),transparent)}
-.testi-track{display:flex;gap:20px;width:max-content;animation:scrollTestis 30s linear infinite}
+.testi-track{display:flex;gap:20px;width:max-content;animation:scrollTestis 65s linear infinite}
 .testi-track:hover{animation-play-state:paused}
 @keyframes scrollTestis{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .testi-cta{text-align:center;margin-top:44px}
@@ -426,7 +426,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .rv-thanks-ico{width:52px;height:52px;border-radius:50%;background:var(--gold);color:#fff;font-size:1.5rem;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
 .testi:hover{background:rgba(255,255,255,0.06);border-color:rgba(184,151,90,0.25)}
 .testi-stars{color:var(--gold);font-size:0.85rem;letter-spacing:3px;margin-bottom:16px}
-.testi-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(253,250,244,0.9);margin-bottom:24px;overflow-wrap:break-word;word-break:break-word;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.testi-text{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:400;font-style:normal;line-height:1.7;color:rgba(253,250,244,0.9);margin-bottom:24px;overflow-wrap:break-word;word-break:break-word;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 .testi-author{display:flex;align-items:center;gap:12px}
 .testi-av{width:40px;height:40px;border-radius:50%;background:rgba(184,151,90,0.15);border:1px solid rgba(184,151,90,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem}
 .testi-name{font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.95)}
@@ -1415,6 +1415,9 @@ async function loadTestimonios() {
     if (fotos.length > 1) {
       prevBtn.style.display = 'flex';
       nextBtn.style.display = 'flex';
+      let timer = setInterval(() => show((idx + 1) % fotos.length), 6000);
+      main.addEventListener('mouseenter', () => clearInterval(timer));
+      main.addEventListener('mouseleave', () => { timer = setInterval(() => show((idx + 1) % fotos.length), 6000); });
     }
   });
 
